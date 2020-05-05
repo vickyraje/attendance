@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule , routingComponents } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'; 
 
 @NgModule({
   declarations: [
