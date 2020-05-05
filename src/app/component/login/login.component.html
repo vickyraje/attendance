@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-50 align-center login-form-bg">
+        <div class="login">
+            <h4>Welcome To</h4>
+            <img class="login-logo" src="../../../assets/img/logo.png"/>
+            <img class="login-over-logo" src="../../../assets/img/logo-w.png"/>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Mauris vel auctor est, a viverra lorem.</p>
+            <form class="form-design" novalidate [formGroup]="login" (submit)="userLogin(login.value)">
+                <div class="form-grp icon-form">
+                    <input type="text" maxlength="10" autocomplete="off" autofocus placeholder="Username" class="text-box" (change)="checkMobile($event)" formControlName="username" name="username" id="username"/>
+                    <span class="text-box-icon">
+                        <img src="../../../assets/img/icon/user.svg"/>
+                    </span>
+                    <span *ngIf="login.get('username').dirty || formSubmitclicked">
+						<small class="error" *ngIf="login.get('username').hasError('required')">User Name Required</small>
+					</span>
+                </div>
+                <div *ngIf="isShow" class="form-grp icon-form">
+                    <input type="text" maxlength="6" autocomplete="off" placeholder="Password" class="text-box" formControlName="password" name="password" id="password"/>
+                    <span class="text-box-icon">
+                        <img src="../../../assets/img/icon/padlock.svg"/>
+                    </span>
+					<span *ngIf="login.get('password').dirty || formSubmitclicked">
+						<small class="error" *ngIf="login.get('password').hasError('required')">Password Required</small>
+					</span>
+                </div><!--routerLink="/checkIn"-->
+                <button type="submit" [disabled]="!login.valid" class="btn-style w-100">Logins</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="col-50 res-hide">
+        <div class="login-img img-over-grad">
+            <img src="../../../assets/img/login-bg.jpg" class="login-bg" alt="login bacground"/>
+            <div class="over-content">
+                <img class="login-over-logo" src="../../../assets/img/logo-w.png"/>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel auctor est, a viverra lorem. Sed ac ex ut arcu lobortis pellentesque.</p>
+            </div>
+        </div>
+    </div>
+</div>
